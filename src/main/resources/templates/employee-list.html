@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "ISO-8859-1" />
+        <link rel = "stylesheet" href = "/css/employee-list.css" />
+        <title>Employee List</title>
+    </head>
+    <body>
+        <h2>Employees</h2>
+
+        <form th:action="@{/}" method="get">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" th:value="${firstName}"/><br>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" th:value="${lastName}"/><br>
+
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex">
+                <option value="">All</option>
+                <option value="H" th:selected="${sex == 'H'}">H</option>
+                <option value="F" th:selected="${sex == 'F'}">F</option>
+            </select><br>
+
+            <label for="function">Function:</label>
+            <input type="text" id="function" name="function" th:value="${function}"/><br>
+
+            <label for="hireDateFrom">Hire Date From:</label>
+            <input type="date" id="hireDateFrom" name="hireDateFrom" th:value="${hireDateStart}"/><br>
+
+            <label for="hireDateTo">Hire Date To:</label>
+            <input type="date" id="hireDateTo" name="hireDateTo" th:value="${hireDateEnd}"/><br>
+
+            <label for="retireDateFrom">Retire Date From:</label>
+            <input type="date" id="retireDateFrom" name="retireDateFrom" th:value="${retireDateStart}"/><br>
+
+            <label for="retireDateTo">Retire Date To:</label>
+            <input type="date" id="retireDateTo" name="retireDateTo" th:value="${retireDateEnd}"/><br>
+
+            <button type="submit">Search</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Actions</th>
+                    <th>Serial number</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Birth date</th>
+                    <th>Sex</th>
+                    <th>Function</th>
+                    <th>Hire date</th>
+                    <th>Retire date</th>
+                    <th>CIN number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="employee : ${employees}">
+                    <td>
+                        <a th:href="@{/details/{id}(id=${employee.id})}">Show details</a><br>
+                        <a th:href="@{/update/{id}(id=${employee.id})}">Update</a>
+                    </td>
+                    <td th:text="${employee.serialNumber}"></td>
+                    <td th:text="${employee.firstName}"></td>
+                    <td th:text="${employee.lastName}"></td>
+                    <td th:text="${employee.birthDate}"></td>
+                    <td th:text="${employee.sex}"></td>
+                    <td th:text="${employee.function}"></td>
+                    <td th:text="${employee.hireDate}"></td>
+                    <td th:text="${employee.retireDate}"></td>
+                    <td th:text="${employee.cinNumber}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button>
+            <a th:href="@{/addEmployee}">Add a new employee</a>
+        </button>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #4285F4;
+}
+
+button {
+    margin-top: 20px;
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}

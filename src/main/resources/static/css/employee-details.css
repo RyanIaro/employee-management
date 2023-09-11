@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c2c2c2;
+    margin: 20px;
+}
+
+h2 {
+    color: #4285F4;
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.employee-info {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.employee-info p {
+    margin-bottom: 10px;
+}
+
+.employee-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.employee-info li {
+    margin-bottom: 5px;
+}
+
+.back-button {
+    margin-top: 20px;
+    background-color: #4285F4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.back-button a {
+    color: white;
+    text-decoration: none;
+}
+
+.update-button {
+    background-color: #4285F4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.update-button a {
+    color: #fff;
+    text-decoration: none;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "ISO-8859-1" />
+        <link rel="stylesheet" href="/css/form.css">
+        <title>Update an employee</title>
+    </head>
+    <body>
+        <h2>Update Employee</h2>
+        <form th:action="@{/update/{id}(id=${employee.id})}" th:object="${employee}" method="post" enctype="multipart/form-data">
+            <label for="id">Id:</label>
+            <input disabled type="text" id="id" th:field="*{id}"><br>
+
+            <label for="serialNUmber">Serial number:</label>
+            <input disabled type="text" id="serialNUmber" th:field="*{serialNumber}"><br>
+
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" th:field="*{firstName}" required><br>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" th:field="*{lastName}" required><br>
+
+            <label for="birthDate">Birth Date:</label>
+            <input type="date" id="birthDate" th:field="*{birthDate}" required><br>
+
+            <label for="photo">Photo:</label><br>
+            <input type="file" id="photo"  name="photo" accept="image/*" th:field="*{photo}"/><br>
+
+            <label for="sex">Sex:</label><br>
+            <select id="sex" name="sex" th:field="*{sex}" required>
+                <option value="H">H</option>
+                <option value="F">F</option>
+            </select><br>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" th:field="*{address}" required><br>
+
+            <label for="phoneNumbers">Phone numbers:(add a semicolon ";" to add another phone number)</label>
+            <input type="text" id="phoneNumbers" th:field="*{phoneNumbers}" required>
+
+            <label for="proEMail">Professional email:</label>
+            <input type="email" id="proEMail" th:field="*{proEmail}" required><br>
+
+            <label for="personalEmail">Personal email:</label>
+            <input type="email" id="personalEmail" th:field="*{personalEmail}" required><br>
+
+            <label for="cinNumber">CIN number:</label>
+            <input type="text" id="cinNumber" th:field="*{cinNumber}" required><br>
+
+            <label for="cinDeliverDate">CIN deliver date:</label>
+            <input type="date" id="cinDeliverDate" th:field="*{cinDeliverDate}" required><br>
+
+            <label for="cinDeliverPlace">CIN deliver place:</label>
+            <input type="text" id="cinDeliverPlace" th:field="*{cinDeliverPlace}" required><br>
+
+            <label for="function">Function:</label>
+            <input type="text" id="function" th:field="*{function}" required><br>
+
+            <label for="childrenNumber">Children number:</label>
+            <input type="number" id="childrenNumber" th:field="*{childrenNumber}" required><br>
+
+            <label for="hireDate">Hire date:</label>
+            <input type="date" id="hireDate" th:field="*{hireDate}" required><br>
+
+            <label for="retireDate">Retire date:</label>
+            <input type="date" id="retireDate" th:field="*{retireDate}"><br>
+
+            <label for="category">Category:</label>
+            <input type="text" id="category" th:field="*{category}" required><br>
+
+            <label for="CNAPSNumber">CNAPS number:</label>
+            <input type="text" id="CNAPSNumber" th:field="*{CNAPSNumber}" required><br>
+
+            <button type="submit">Update Employee</button>
+            <button>
+                <a th:href="@{/}">Back to list</a>
+            </button>
+        </form>
+
+    </body>
+</html>

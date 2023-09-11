@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset = "ISO-8859-1" />
+        <link rel="stylesheet" href="/css/employee-details.css">
+        <title>Employee details</title>
+    </head>
+    <body>
+      <div class="employee-info">
+          <h2>Employee Information</h2>
+          <p><strong>Photo:</strong></p>
+          <div th:if="${employee.photo != null}">
+              <img th:src="'data:image/*;base64, ' + ${employee.photo}" alt="Aucune photo">
+          </div>
+          <div th:unless="${employee.photo != null}">
+              <p>No photo</p>
+          </div>
+
+          <p><strong>Serial Number:</strong> <span th:text="${employee.serialNumber}"></span></p>
+
+          <p><strong>First Name:</strong> <span th:text="${employee.firstName}"></span></p>
+
+          <p><strong>Last Name:</strong> <span th:text="${employee.lastName}"></span></p>
+
+          <p><strong>Birthdate:</strong> <span th:text="${employee.birthDate}"></span></p>
+
+          <p><strong>Sex:</strong> <span th:text="${employee.sex}"></span></p>
+
+          <p><strong>Phone numbers:</strong>
+          <ul>
+              <li th:each="number : ${employee.phoneNumbers}" th:text="${number.value}"></li>
+          </ul>
+
+          <p><strong>Address:</strong> <span th:text="${employee.address}"></span></p>
+
+          <p><strong>Professional email:</strong> <span th:text="${employee.proEmail}"></span></p>
+
+          <p><strong>Personal email:</strong> <span th:text="${employee.personalEmail}"></span></p>
+
+          <p><strong>CIN number:</strong> <span th:text="${employee.cinNumber}"></span></p>
+
+          <p><strong>CIN deliver date:</strong> <span th:text="${employee.cinDeliverDate}"></span></p>
+
+          <p><strong>CIN deliver place:</strong> <span th:text="${employee.cinDeliverPlace}"></span></p>
+
+          <p><strong>Function:</strong> <span th:text="${employee.function}"></span></p>
+
+          <p><strong>Category:</strong> <span th:text="${employee.category}"></span></p>
+
+          <p><strong>Children number:</strong> <span th:text="${employee.childrenNumber}"></span></p>
+
+          <p><strong>Hire date:</strong> <span th:text="${employee.hireDate}"></span></p>
+
+          <p><strong>Retire date:</strong> <span th:text="${employee.retireDate}"></span></p>
+
+          <p><strong>CNAPS number:</strong> <span th:text="${employee.CNAPSNumber}"></span></p>
+
+          <button class="back-button">
+              <a th:href="@{/}">Back to list</a>
+          </button>
+          <button class="update-button">
+              <a th:href="@{/update/{id}(id=${employee.id})}">Update this employee</a>
+          </button>
+      </div>
+    </body>
+</html>
